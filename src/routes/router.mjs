@@ -3,6 +3,7 @@ import AuthError from "../errors/AuthError.mjs";
 import FilmError from "../errors/FilmError.mjs";
 import authMiddleware from "../middleware/AuthMiddleware.mjs";
 import upload from "../config/UploadConfig.mjs";
+import CommentError from "../errors/CommentError.mjs";
 
 export const router = express.Router();
 
@@ -33,4 +34,10 @@ router.delete('/films/delete/:id', (req, res) => {
 
 router.get('/films/show/:id', (req, res) => {
     FilmError.show(req, res);
+})
+
+// Comments
+
+router.post('/comment/store/:film_id', (req, res) => {
+    CommentError.store(req, res)
 })

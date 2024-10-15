@@ -1,4 +1,3 @@
-// FilmService.mjs
 import FilmImplementation from "../repository/implementations/FilmImplementation.mjs";
 
 class FilmService {
@@ -8,8 +7,8 @@ class FilmService {
     index(){
         return this.FilmImplementation.index()
     }
-    store(name, duration, description, price, image, adminId){
-        const filmfields = { name, duration, description, price }
+    store(name, duration, description, image, adminId){
+        const filmfields = { name, duration, description }
         return this.FilmImplementation.store(filmfields, adminId, image)
     }
 

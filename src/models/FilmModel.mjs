@@ -1,10 +1,9 @@
 class FilmModel {
-    constructor(id, name, duration, adminId, price, description) {
+    constructor(id, name, duration, adminId, description) {
         this.name = name;
         this.duration = duration;
         this.adminId = adminId;
         this.id = id
-        this.price = price;
         this.description = description;
     }
 
@@ -28,8 +27,5 @@ class FilmModel {
         return this.description;
     }
 
-    getPrice() {
-        return this.price;
-    }
 }
 export default FilmModel

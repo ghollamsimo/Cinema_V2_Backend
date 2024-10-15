@@ -9,10 +9,6 @@ const filmSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    price: {
-        type: Number,
-        required: true,
-    },
     duration: {
         type: Number,
         required: true,
@@ -30,4 +26,4 @@ const filmSchema = new mongoose.Schema({
 
 const Film = mongoose.model('Film', filmSchema);
 
-export default Film;
+export default Film

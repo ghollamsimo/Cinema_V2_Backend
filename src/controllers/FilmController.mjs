@@ -6,26 +6,30 @@ class FilmController {
     }
     async index(req, res) {
         const film = await this.FilmService.index()
-        return res.json(film)
+        return res.json(film);
     }
     async store(req, res) {
-        const {name, duration, description, price} = req.body
-        const image = req.file ? req.file.path : null
-        const adminId = req.user.adminId;
+        const { name, duration, description } = req.body;
+        const image = req.file ? req.file.path : null;
+        const admin_id = req.user._id;
 
-        await this.FilmService.store(name, duration, description, price, image, adminId)
-        return res.json({message: 'Film saved successfully'})
+        if (!admin_id) {
+            return res.status(400).json({ message: 'Admin ID is required' });
+        }
+
+        const filmFields = { name, duration, description };
+
+        await this.FilmService.store(filmFields, admin_id, image);
+        return res.status(201).json({ message: 'Film saved successfully' })
 
     }
-
     async update(req, res){
-
         const {id} = req.params
-        const {name, duration, description, price} = req.body
+        const {name, duration, description} = req.body
         const image = req.file ? req.file.path : null
-        const adminId = req.user.adminId;
+        const admin_id = req.user.adminId;
 
-        await this.FilmService.update(id, name, duration, description, price, image, adminId)
+        await this.FilmService.update(id, name, duration, description, image, admin_id)
 
         return res.json({message: 'Film updated successfully'})
 

@@ -46,8 +46,16 @@ class GenericDao {
         return entity.remove();
     }
 
+    async deleteByClientId(id, client_id) {
+        const entity = await this.schema.findOne({ _id: id, client_id: client_id });
+        return entity.remove();
+    }
     async findAll() {
         return this.schema.find().exec();
+    }
+
+    findByFilmId(film_id) {
+        return this.schema.findById({film_id: film_id}).exec();
     }
 }
 
