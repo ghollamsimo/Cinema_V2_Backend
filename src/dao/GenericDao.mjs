@@ -11,6 +11,10 @@ class GenericDao {
         return this.schema.insertMany(entities);
     }
 
+    deleteMany(filter) {
+        return this.schema.deleteMany(filter);
+    }
+
     async findByUserId(userId) {
         try {
             return await this.schema.findOne({ user: userId }).exec();

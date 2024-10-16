@@ -53,10 +53,17 @@ class SalleImplementation extends SalleInterface{
         })
     }
 
-    destroy(_id){
-        return this.salleDao.delete(_id).then((result) => {
-            return result
-        })
+    destroy(_id) {
+        return this.salleDao.delete(_id)
+            .then((result) => {
+                if (result) {
+                    return this.seatsDao.deleteMany({ salle_id: _id });
+                }
+                return result;
+            })
+            .catch((error) => {
+                throw new Error('Error deleting salle and its seats: ' + error.message);
+            });
     }
 }
 
