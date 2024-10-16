@@ -13,13 +13,6 @@ class CommentError{
         }
     }
 
-    update(req, res) {
-        try {
-            return this.CommentController.update(req, res)
-        }catch (e) {
-            throw new Error(e)
-        }
-    }
 
     destroy(req, res) {
         try {

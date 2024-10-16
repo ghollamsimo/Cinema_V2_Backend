@@ -11,7 +11,7 @@ class FilmController {
     async store(req, res) {
         const { name, duration, description } = req.body;
         const image = req.file ? req.file.path : null;
-        const admin_id = req.user._id;
+        const admin_id = req.user?.adminId;
 
         if (!admin_id) {
             return res.status(400).json({ message: 'Admin ID is required' });

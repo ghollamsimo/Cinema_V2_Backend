@@ -5,12 +5,8 @@ class CommentService {
         this.CommentImplementation = new CommentImplementation()
     }
 
-    store(_client_id, _comment, _film_id){
-        return this.CommentImplementation.store(_client_id, _comment, _film_id)
-    }
-
-    update(_id, _comment, _client_id){
-        return this.CommentImplementation.update(_id, _comment, _client_id)
+    store(client_id, commentObj, film_id) {
+        return this.CommentImplementation.store(client_id, commentObj, film_id);
     }
 
     destroy(_id, _client_id){

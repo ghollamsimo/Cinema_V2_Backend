@@ -38,6 +38,7 @@ router.get('/films/show/:id', (req, res) => {
 
 // Comments
 
-router.post('/comment/store/:film_id', (req, res) => {
+router.post('/comment/store/:film_id', authMiddleware,(req, res) => {
     CommentError.store(req, res)
 })
+

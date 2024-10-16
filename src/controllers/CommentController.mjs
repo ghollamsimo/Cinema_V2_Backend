@@ -6,22 +6,14 @@ class CommentController{
     }
 
     async store(req, res){
-        const {comment} = req.body
-        const {film_id} = req.params
-        const client_id = req.user.clientId
+        const { comment } = req.body;
+        const { film_id } = req.params;
+        const client_id = req.user._id;
 
-        const comments = await this.CommentService.store(client_id, comment, film_id)
+        const comments = await this.CommentService.store(client_id, {comment}, film_id)
         return res.json({message: 'Comment stored Successfully'})
     }
 
-    async update(req, res){
-        const {id} = req.params
-        const {comment} = req.body
-        const client_id = req.user.clientId
-
-        const comments = await this.CommentService.update(id, comment, client_id )
-        return res.json({message: 'Comment updated Successfully'})
-    }
 
     async destroy(req, res){
         const {id} = req.params

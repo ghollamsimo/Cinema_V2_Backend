@@ -7,9 +7,8 @@ class FilmService {
     index(){
         return this.FilmImplementation.index()
     }
-    store(name, duration, description, image, adminId){
-        const filmfields = { name, duration, description }
-        return this.FilmImplementation.store(filmfields, adminId, image)
+    store(filmFields, adminId, image){
+        return this.FilmImplementation.store(filmFields, adminId, image)
     }
 
     update(id, name, duration, description, price, image, adminId){

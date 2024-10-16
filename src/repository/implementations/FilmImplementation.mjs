@@ -15,27 +15,26 @@ class FilmImplementation extends FilmInterface{
     }
 
     store(filmfields, adminId, _image) {
-        const {name, duration, description} = filmfields
+        const { name, duration, description } = filmfields;
         const image = _image;
         if (!adminId) {
             throw new Error("adminId is required");
         }
 
-        const filmObj = new FilmModel(name, duration, adminId, description);
-
+        new FilmModel(name, duration, adminId, description);
         const film = {
-            name: filmObj.getName(),
-            duration: filmObj.getDuration(),
+            name: name,
+            duration: parseInt(duration),
             image: image,
-            adminId,
-            description: filmObj.getDescription(),
+            admin_id: adminId,
+            description: description,
         };
 
-        return this.filmDao.save(film).then((result) => {
-            return result
-        }).catch((err) => {
-            throw new Error(err);
-        });
+        return this.filmDao.save(film)
+            .then((result) => result)
+            .catch((err) => {
+                throw new Error(err.message);
+            });
     }
 
     update(_id, filmfields, adminId, _image) {

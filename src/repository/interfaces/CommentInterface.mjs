@@ -9,9 +9,6 @@ class CommentInterface {
         throw new Error('Must be Implemented!!');
     }
 
-    update(_id, _comment, _client_id){
-        throw new Error('Must be Implemented!!');
-    }
 
     show(_film_id){
         throw new Error('Must be Implemented!!');
