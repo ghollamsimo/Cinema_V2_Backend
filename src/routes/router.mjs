@@ -4,6 +4,7 @@ import FilmError from "../errors/FilmError.mjs";
 import authMiddleware from "../middleware/AuthMiddleware.mjs";
 import upload from "../config/UploadConfig.mjs";
 import CommentError from "../errors/CommentError.mjs";
+import SalleError from "../errors/SalleError.mjs";
 
 export const router = express.Router();
 
@@ -42,3 +43,18 @@ router.post('/comment/store/:film_id', authMiddleware,(req, res) => {
     CommentError.store(req, res)
 })
 
+
+
+// Salle
+
+router.post('/salle/store', authMiddleware, (req, res) => {
+    SalleError.store(req, res)
+})
+
+router.get('/salle/index', (req, res) => {
+    SalleError.index(req, res)
+})
+
+router.delete('/salle/delete/:id', (req, res) => {
+    SalleError.destroy(req, res)
+})

@@ -42,8 +42,7 @@ class GenericDao {
     }
 
     async delete(id) {
-        const entity = await this.findById(id);
-        return entity.remove();
+        return this.schema.findByIdAndDelete(id);
     }
 
     async deleteByClientId(id, client_id) {

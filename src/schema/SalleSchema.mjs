@@ -16,7 +16,7 @@ const salleShema = new mongoose.Schema({
     },
     admin_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Admin',
+        ref: 'User',
         required: true
     },
 }, {collection: 'salles'})

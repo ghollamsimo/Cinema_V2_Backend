@@ -6,7 +6,18 @@ class SalleInterface {
 
     }
 
-    store(salleFields, ){
+    store(salleFields, _admin_id){
+        throw new Error('Must be Implemented!!');
+    }
+
+
+    index(){
+        throw new Error('Must be Implemented!!');
+    }
+
+    destroy(_id){
         throw new Error('Must be Implemented!!');
     }
 }
+
+export default SalleInterface
