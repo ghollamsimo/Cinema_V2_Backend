@@ -7,6 +7,10 @@ class GenericDao {
         return this.schema.create(entity);
     }
 
+    saveMany(entities) {
+        return this.schema.insertMany(entities);
+    }
+
     async findByUserId(userId) {
         try {
             return await this.schema.findOne({ user: userId }).exec();

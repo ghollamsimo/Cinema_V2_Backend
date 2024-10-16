@@ -8,7 +8,6 @@ class SalleController {
     async store(req, res) {
         const {name, type, capacity} = req.body
         const admin_id = req.user?.adminId
-        console.log(admin_id);
 
         const salle = await this.SalleService.store({name, type, capacity}, admin_id)
         return res.json({message: 'Salle Stored successfully'})
