@@ -6,7 +6,6 @@ import SalleModel from "../../models/SalleModel.mjs";
 class SalleImplementation extends SalleInterface{
     constructor() {
         super();
-
         this.salleDao = new GenericDao(Salle)
     }
 
