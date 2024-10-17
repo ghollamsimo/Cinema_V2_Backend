@@ -16,31 +16,15 @@ class GenericDao {
     }
 
     async findByUserId(userId) {
-        try {
-            return await this.schema.findOne({ user: userId }).exec();
-        } catch (error) {
-            throw new Error("Error retrieving entity information");
-        }
+        return await this.schema.findOne({ user: userId }).exec();
     }
 
     async findByUserEmail(email) {
-        try {
-            return await this.schema.findOne({ email }).exec();
-        } catch (error) {
-            throw new Error("Error retrieving entity information");
-        }
+        return await this.schema.findOne({ email }).exec();
     }
 
     async findById(id) {
-        try {
-            const entity = await this.schema.findById(id).exec();
-            if (!entity) {
-                throw new Error("Entity not found");
-            }
-            return entity;
-        } catch (error) {
-            throw new Error("Error retrieving entity information");
-        }
+        return await this.schema.findById(id).exec();
     }
 
     async update(id, updatedData) {
