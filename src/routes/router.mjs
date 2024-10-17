@@ -45,8 +45,6 @@ router.post('/comment/store/:film_id', authMiddleware,(req, res) => {
     CommentError.store(req, res)
 })
 
-
-
 // Salle
 
 router.post('/salle/store', authMiddleware, (req, res) => {

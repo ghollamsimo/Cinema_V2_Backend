@@ -11,6 +11,10 @@ class GenericDao {
         return this.schema.insertMany(entities);
     }
 
+    updateMany(filter){
+        return this.schema.updateMany(filter)
+    }
+
     deleteMany(filter) {
         return this.schema.deleteMany(filter);
     }

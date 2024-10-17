@@ -20,6 +20,14 @@ const sessionSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Salle'
     },
+    started_date: {
+      type: Date,
+        required: true
+    },
+    end_date: {
+        type: Date,
+        required: true
+    },
     seat_id: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Seats'
