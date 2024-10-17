@@ -1,5 +1,5 @@
 class ReservationModel {
-    constructor(clientId, sessionId, seatId) {
+    constructor(sessionId, seatId, clientId) {
         this.clientId = clientId
         this.sessionId = sessionId
         this.seatId = seatId

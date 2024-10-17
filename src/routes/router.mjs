@@ -6,6 +6,7 @@ import upload from "../config/UploadConfig.mjs";
 import CommentError from "../errors/CommentError.mjs";
 import SalleError from "../errors/SalleError.mjs";
 import SessionError from "../errors/SessionError.mjs";
+import ReservationError from "../errors/ReservationError.mjs";
 
 export const router = express.Router();
 
@@ -64,4 +65,10 @@ router.delete('/salle/delete/:id', (req, res) => {
 
 router.post('/session/store', authMiddleware, (req, res) => {
     SessionError.store(req, res)
+})
+
+// Reservation
+
+router.post('/reservation/store', authMiddleware, (req, res) => {
+    ReservationError.store(req, res)
 })

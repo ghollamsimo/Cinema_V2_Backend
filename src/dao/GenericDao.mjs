@@ -28,9 +28,7 @@ class GenericDao {
     }
 
     async update(id, updatedData) {
-        const entity = await this.findById(id);
-        Object.assign(entity, updatedData);
-        return entity.save();
+        return this.schema.findByIdAndUpdate(id, updatedData, { new: true });
     }
 
     async delete(id) {
