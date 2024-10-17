@@ -7,6 +7,7 @@ import CommentError from "../errors/CommentError.mjs";
 import SalleError from "../errors/SalleError.mjs";
 import SessionError from "../errors/SessionError.mjs";
 import ReservationError from "../errors/ReservationError.mjs";
+import RatingError from "../errors/RatingError.mjs";
 
 export const router = express.Router();
 
@@ -72,4 +73,10 @@ router.delete('/session/delete/:id', (req, res) => {
 
 router.post('/reservation/store', authMiddleware, (req, res) => {
     ReservationError.store(req, res)
+})
+
+// Rating
+
+router.post('/rating/store/:film_id', authMiddleware, (req, res) => {
+    RatingError.store(req, res)
 })
