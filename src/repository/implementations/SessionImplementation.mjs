@@ -26,6 +26,14 @@ class SessionImplementation extends SessionInterface{
             })
 
     }
+
+    destroy(_id) {
+        const {id} = _id
+
+        return this.sessionDao.delete(id).then((result) => {
+            return result
+        })
+    }
 }
 
 export default SessionImplementation

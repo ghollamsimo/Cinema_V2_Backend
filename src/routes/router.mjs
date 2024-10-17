@@ -67,6 +67,9 @@ router.post('/session/store', authMiddleware, (req, res) => {
     SessionError.store(req, res)
 })
 
+router.delete('/session/delete/:id', (req, res) => {
+    SessionError.destroy(req, res)
+})
 // Reservation
 
 router.post('/reservation/store', authMiddleware, (req, res) => {

@@ -8,6 +8,10 @@ class SessionService {
     store(sessionFields, _admin_id){
         return this.SessionImplementation.store(sessionFields, _admin_id)
     }
+
+    destroy(_id){
+        return this.SessionImplementation.destroy(_id)
+    }
 }
 
 export default SessionService
