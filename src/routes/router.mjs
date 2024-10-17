@@ -5,6 +5,7 @@ import authMiddleware from "../middleware/AuthMiddleware.mjs";
 import upload from "../config/UploadConfig.mjs";
 import CommentError from "../errors/CommentError.mjs";
 import SalleError from "../errors/SalleError.mjs";
+import SessionError from "../errors/SessionError.mjs";
 
 export const router = express.Router();
 
@@ -57,4 +58,10 @@ router.get('/salle/index', (req, res) => {
 
 router.delete('/salle/delete/:id', (req, res) => {
     SalleError.destroy(req, res)
+})
+
+// Session
+
+router.post('/session/store', authMiddleware, (req, res) => {
+    SessionError.store(req, res)
 })

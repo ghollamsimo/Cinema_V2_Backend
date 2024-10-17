@@ -20,9 +20,10 @@ const sessionSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Salle'
     },
-    seat_id: [
-       Seats
-    ]
+    seat_id: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Seats'
+    }]
 }, { collection: 'sessions' })
 
 const Session = mongoose.model('Session', sessionSchema);

@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const salleShema = new mongoose.Schema({
+const salleSchema = new mongoose.Schema({
     type: {
         type: String,
         enum: ['Normal', 'Vip'],
@@ -21,6 +21,6 @@ const salleShema = new mongoose.Schema({
     },
 }, {collection: 'salles'})
 
-const Salle = mongoose.model('Salle', salleShema)
+const Salle = mongoose.model('Salle', salleSchema)
 
 export default Salle
