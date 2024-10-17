@@ -62,7 +62,7 @@ class SalleImplementation extends SalleInterface{
                 return result;
             })
             .catch((error) => {
-                throw new Error('Error deleting salle and its seats: ' + error.message);
+                throw new Error(error.message);
             });
     }
 }
