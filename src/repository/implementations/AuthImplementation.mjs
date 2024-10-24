@@ -65,7 +65,7 @@ class AuthImplementation extends AuthInterface {
                 throw new Error('Error comparing password: ' + err);
             });
         }).catch((err) => {
-            throw new Error('Error finding user: ' + err);
+            throw new Error('Error finding user: ' + err)
         });
     }
 
@@ -99,6 +99,12 @@ class AuthImplementation extends AuthInterface {
         }).catch((err) => {
             throw new Error('Error finding user: ' + err);
         });
+    }
+
+    show(id) {
+        return this.userDao.findById(id).then((user) => {
+            return user
+        })
     }
 }
 

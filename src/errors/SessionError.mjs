@@ -20,6 +20,14 @@ class SessionError {
             throw new Error(e)
         }
     }
+
+    show(req, res) {
+        try {
+            return this.SessionController.show(req, res)
+        }catch (e) {
+            throw new Error(e)
+        }
+    }
 }
 
 export default new SessionError()

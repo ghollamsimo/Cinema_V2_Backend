@@ -12,6 +12,10 @@ class SessionService {
     destroy(_id){
         return this.SessionImplementation.destroy(_id)
     }
+
+    show(film_id){
+        return this.SessionImplementation.show(film_id)
+    }
 }
 
 export default SessionService

@@ -11,9 +11,9 @@ class ReservationImplementation extends ReservationInterface{
         this.seatsDao = new GenericDao(Seats)
     }
 
-    store(reservationFields, _client_id) {
-        const {session_id, seat_id} = reservationFields
-        const reservationObj = new ReservationModel(session_id, seat_id, _client_id)
+    store(reservationFields, _session_id,_client_id) {
+        const {seat_id} = reservationFields
+        const reservationObj = new ReservationModel(_session_id, seat_id, _client_id)
         const reservation = {
             session_id: reservationObj.getSessionId(),
             seat_id: reservationObj.getSeatId(),

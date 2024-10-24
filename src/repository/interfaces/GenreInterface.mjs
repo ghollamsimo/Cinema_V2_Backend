@@ -1,21 +1,18 @@
-class SessionInterface {
+class GenreInterface {
     constructor() {
-        if(new.target === SessionInterface){
+        if (new.target === GenreInterface) {
             throw new Error('It is an abstract class can not be instancited');
         }
+
     }
 
-    store(sessionFields, _admin_id){
+    store(_client_id, _genre){
         throw new Error('Must be Implemented!!');
     }
 
     destroy(_id){
         throw new Error('Must be Implemented!!');
     }
-
-    show(_film_id){
-        throw new Error('Must be Implemented!!');
-    }
 }
 
-export default SessionInterface
+export default GenreInterface

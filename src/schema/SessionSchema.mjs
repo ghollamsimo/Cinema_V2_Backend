@@ -31,7 +31,13 @@ const sessionSchema = new mongoose.Schema({
     seat_id: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Seats'
-    }]
+    }],
+    status: {
+        type: String,
+        enum: ['Available','Completed'],
+        default: 'Available',
+        required: true
+    }
 }, { collection: 'sessions' })
 
 const Session = mongoose.model('Session', sessionSchema);

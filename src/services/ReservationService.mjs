@@ -5,8 +5,8 @@ class ReservationService {
         this.ReservationImplementation = new ReservationImplementation()
     }
 
-    store(reservationFields, _client_id){
-        return this.ReservationImplementation.store(reservationFields, _client_id)
+    store(reservationField, session_id, _client_id){
+        return this.ReservationImplementation.store(reservationField, session_id,_client_id)
     }
 }
 

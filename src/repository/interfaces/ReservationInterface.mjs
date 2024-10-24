@@ -5,7 +5,7 @@ class ReservationInterface {
         }
     }
 
-    store(reservationFields, _client_id){
+    store(reservationField, _session_id, _client_id){
         throw new Error('Must be Implemented!!');
     }
 }

@@ -20,6 +20,14 @@ class AuthError {
             throw new Error(e)
         }
     }
+
+    show(req, res) {
+        try {
+            return this.AuthController.show(req, res)
+        }catch (e) {
+            throw new Error(e)
+        }
+    }
 }
 
 export default new AuthError()

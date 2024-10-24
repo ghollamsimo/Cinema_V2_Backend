@@ -20,7 +20,6 @@ class RatingImplementation extends RatingInterface{
         });
     }
 
-
     calculateAverageForFilm(_film_id) {
         return this.rateDao.find({ film_id: _film_id, rate: { $gte: 1, $lte: 5 } })
             .then((ratings) => {

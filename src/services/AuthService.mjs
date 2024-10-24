@@ -12,6 +12,10 @@ class AuthService {
     login(email, password){
         return this.AuthImplementation.login(email, password)
     }
+
+    show(_id){
+        return this.AuthImplementation.show(_id)
+    }
 }
 
 export default AuthService

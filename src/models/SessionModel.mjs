@@ -1,5 +1,5 @@
 class SessionModel {
-    constructor(filmId, hours, salleId, adminId, seat_id, started_date, end_date) {
+    constructor(filmId, hours, salleId, adminId, seat_id, started_date, end_date, status) {
         this.filmId = filmId;
         this.hours = hours;
         this.salleId = salleId;
@@ -7,6 +7,7 @@ class SessionModel {
         this.seat_id = seat_id
         this.started_date = started_date
         this.end_date = end_date
+        this.status = status
     }
 
     getFilmId() {

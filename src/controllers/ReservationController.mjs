@@ -6,9 +6,10 @@ class ReservationController {
     }
 
     async store(req, res){
-        const {session_id, seat_id} = req.body
+        const { seat_id } = req.body
+        const {session_id} = req.params
         const client_id = req.user.clientId
-        const reservation = await this.ReservationService.store({session_id, seat_id}, client_id)
+        const reservation = await this.ReservationService.store({seat_id}, session_id,client_id)
 
         return res.json({message: 'Reservation stored Successfully'})
     }

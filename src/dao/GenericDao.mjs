@@ -28,7 +28,7 @@ class GenericDao {
     }
 
     async findById(id) {
-        return await this.schema.findById(id).exec();
+        return this.schema.findById({_id: id}).exec();
     }
 
     async find(query) {

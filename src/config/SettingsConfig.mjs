@@ -10,5 +10,6 @@ const db = mongoose.connect(MONGO_URL, {
 }).catch((error) => {
     console.error('Error connecting to MongoDB:', error);
 });
+mongoose.set('strictPopulate', false);
 
 export default db

@@ -24,6 +24,12 @@ class AuthController {
          return res.status(200).json({ message: 'Login successful', user, token });
 
     }
+
+    async show(req, res) {
+        const {id} = req.params
+        const user = await this.AuthService.show(id)
+        return res.json(user)
+    }
 }
 
 export default AuthController;

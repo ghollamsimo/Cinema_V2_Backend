@@ -7,8 +7,8 @@ class FilmService {
     index(){
         return this.FilmImplementation.index()
     }
-    store(filmFields, adminId, image){
-        return this.FilmImplementation.store(filmFields, adminId, image)
+    store(filmFields, adminId, image, _video){
+        return this.FilmImplementation.store(filmFields, adminId, image, _video)
     }
 
     update(id, name, duration, description, price, image, adminId){
@@ -21,7 +21,7 @@ class FilmService {
     }
 
     show(_id){
-        return this.FilmImplementation.show(_id)
+        return this.FilmImplementation.show(_id);
     }
 }
 

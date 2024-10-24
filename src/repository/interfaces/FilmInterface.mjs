@@ -10,7 +10,7 @@ class FilmInterface {
         throw new Error('Must be Implemented!!');
     }
 
-    store(filmfields, adminId, _image){
+    store(filmfields, adminId, _image, genre_id , _video){
         throw new Error('Must be Implemented!!');
     }
 
